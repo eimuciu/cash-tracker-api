@@ -19,7 +19,7 @@ namespace cash_tracker_api.Data
             string? connectionString = _config.GetConnectionString("DefaultConnection");
             optionsBuilder.UseSqlite(connectionString);
 
-            var _context = new DataContext(optionsBuilder.Options, new ContextTableName(tableName));
+            var _context = new DataContext(optionsBuilder.Options, tableName);
             return _context;
 
             // _context.Database.ExecuteSqlRawAsync($"CREATE TABLE {tableName} (Id INTEGER PRIMARY KEY AUTOINCREMENT, Name TEXT NOT NULL)");

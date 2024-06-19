@@ -23,27 +23,22 @@ var app = builder.Build();
 
 app.MapControllers();
 
-
-app.MapGet("/", () =>
-{
+// app.MapGet("/", () =>
+// {
     // using var scope = app.Services.CreateScope();
     // var services = scope.ServiceProvider;
-
     // var context = services.GetRequiredService<DataContext>();
 
     // DbSet<Person> per = context.Set<Person>();
     // context.Database.EnsureCreatedAsync().Wait();
-
-    // **********
 
     // var per1 = new Person { Id = 1, Name = "James" };
     // _context.Add(per1);
 
     // _context.SaveChanges();
 
-
-    return "Hello World!";
-});
+//     return "Hello World!";
+// });
 
 app.Run();
 

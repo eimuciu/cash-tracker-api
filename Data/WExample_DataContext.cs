@@ -7,16 +7,16 @@ namespace cash_tracker_api.Data
     {
 
         private readonly string _tableName;
-        public DataContext(DbContextOptions options, ContextTableName tableName) : base(options)
+        public DataContext(DbContextOptions options, string tableName) : base(options)
         {
-            _tableName = tableName.TableName;
+            _tableName = tableName;
         }
 
-        public DbSet<Person> Persons { get; set; }
+        public DbSet<Expense> Expense { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Person>().ToTable(_tableName);
+            builder.Entity<Expense>().ToTable(_tableName).HasKey(x => x.Id);
         }
 
     }
