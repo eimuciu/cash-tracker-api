@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace cash_tracker_api.Entities
 {
-    public class Settings
+    public class Setting
     {
         public int Id { get; set; }
+        public string User { get; set; } = "";
         public string Data { get; set; } = "";
     }
 }
